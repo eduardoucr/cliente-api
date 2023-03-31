@@ -22,6 +22,14 @@ public class ClienteApi {
         return clienteService.obtenerClientes();
     }
 
+    @GetMapping("/{id}")
+    public ClienteDto buscarCliente(@PathVariable int id) {
+        log.info("Busqueda de Cliente: {}", id);
+        return clienteService.obtenerClienteById(id);
+    }
+
+
+
     @GetMapping("/parameter")
     public ClienteDto buscarCliente(@RequestParam String identificacion){
         log.info("Busqueda de Ciente");
